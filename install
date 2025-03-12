@@ -1,0 +1,36 @@
+#!/bin/bash
+
+TARGET="$HOME/.config/nvim"
+
+mkdir -p $TARGET 
+
+# Make sure we are in a git repo
+if ! git rev-parse --is-inside-work-tree &>/dev/null; then
+    echo "error: the script is not in a git repo."
+    exit 1
+fi
+
+# Back up all the files in $TARGET
+if [ -d "$TARGET" ] && [ "$(ls -A $TARGET/)" ]; then
+    echo "Backing up user files..."
+    rm -rf "$TARGET/backup/"
+    mkdir -p "$TARGET/backup/"
+
+    # This is so users won't get confused by an error message
+    for item in "$TARGET"/*; do
+        if [ "$item" != "$TARGET/backup" ]; then
+            mv "$item" "$TARGET/backup/"
+        fi
+    done
+fi
+
+echo "Copying config files..."
+cp -r config/* "$TARGET/"
+
+# Notify user if something goes wrong
+if [[ $? -ne 0 ]]; then
+    echo "Failed to install the config files."
+    exit 1
+fi
+
+echo "done."
