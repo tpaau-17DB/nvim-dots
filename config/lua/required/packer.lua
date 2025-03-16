@@ -6,17 +6,12 @@ use 'wbthomason/packer.nvim'
 -- easy file navigation
 use {
 	'nvim-telescope/telescope.nvim', tag = '0.1.8',
-	requires = { {'nvim-lua/plenary.nvim'} }
+	requires = {'nvim-lua/plenary.nvim', 'onsails/lspkind.nvim', 'nvim-tree/nvim-web-devicons'}
 }
 
--- theme
-use({
-	'habamax/vim-habamax',
-	as = 'habamax',
-	config = function()
-		vim.cmd('colorscheme habamax')
-	end
-})
+-- themes
+use { "ntk148v/habamax.nvim", requires={ "rktjmp/lush.nvim" } }
+vim.cmd('colorscheme habamax')
 
 -- colorize hexcodes
 use 'norcalli/nvim-colorizer.lua'
@@ -39,25 +34,14 @@ use 'williamboman/mason.nvim'
 use 'williamboman/mason-lspconfig.nvim'
 
 -- autocompletion
-use("hrsh7th/cmp-nvim-lsp")
-use("hrsh7th/cmp-nvim")
-use("hrsh7th/cmp-nvim-lua")
-use({
-    "glepnir/lspsaga.nvim",
-    requires = {
-    	{ "nvim-tree/nvim-web-devicons" },
-    	{ "nvim-treesitter/nvim-treesitter" },
-    },
-})
-use("onsails/lspkind.nvim")
+use 'neoclide/coc.nvim'
 
--- automatically close brackets and quotes
 use 'windwp/nvim-autopairs'
 
 -- status bar
 use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons' }
 }
 
 end)

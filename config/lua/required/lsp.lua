@@ -1,25 +1,5 @@
 -- Import the LSP and completion modules
 local nvim_lsp = require('lspconfig')
-local cmp = require('cmp')
-
--- Set up nvim-cmp for autocompletion
-cmp.setup({
-    snippet = {
-        expand = function(args)
-            -- Uncomment and use if you have vsnip installed
-            -- vim.fn["vsnip#anonymous"](args.body)  
-        end,
-    },
-    mapping = {
-        ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    },
-    sources = {
-        { name = 'nvim_lsp' },
-        { name = 'buffer' },
-    },
-})
 
 -- Define a simple `on_attach` function to be used with LSPs
 local on_attach = function(client, bufnr)
