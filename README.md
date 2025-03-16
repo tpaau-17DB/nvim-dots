@@ -23,7 +23,7 @@ After the installation, open `~/.config/nvim/lua/required/packer.lua`:
 nvim ~/.config/nvim/lua/required/packer.lua
 ```
 
-Source the file and sync that packages:
+Sync that packages:
 ```
 :PackerSync
 ```
