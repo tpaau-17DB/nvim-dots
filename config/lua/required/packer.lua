@@ -10,7 +10,7 @@ use {
 }
 
 -- themes
-use { "ntk148v/habamax.nvim", requires={ "rktjmp/lush.nvim" } }
+use { "tpaau-17DB/habamax.nvim", requires={ "rktjmp/lush.nvim" } }
 vim.cmd('colorscheme habamax')
 
 -- colorize hexcodes

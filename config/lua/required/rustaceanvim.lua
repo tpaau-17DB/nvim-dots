@@ -16,3 +16,19 @@ vim.keymap.set(
     end,
     { silent = true, buffer = bufnr }
 )
+vim.keymap.set(
+	"n",
+	"<leader>e",
+	function()
+		vim.cmd.RustLsp("explainError")
+	end,
+	{ silent = true, buffer = bufnr }
+)
+vim.keymap.set(
+	"n",
+	"F",
+	function()
+		vim.cmd.RustLsp("renderDiagnostic")
+	end,
+	{ silent = true, buffer = bufnr }
+)
