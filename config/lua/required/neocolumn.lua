@@ -4,9 +4,9 @@ local config = {
   fg_color = "",
   bg_color = "",
   NeoColumn = "80",
-  always_on = false,
+  always_on = true,
   custom_NeoColumn = {},
-  excluded_ft = { "text", "markdown" },
+  excluded_ft = {},
 }
 
 require("NeoColumn").setup(config)
