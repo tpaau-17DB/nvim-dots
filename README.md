@@ -1,7 +1,7 @@
 # nvim-dots
 Collection of magic files that turn my neovim into an IDE.
 
-Hey, if you are already here, check out my [custom theme](https://github.com/tpaau-17DB/habamax.nvim) I made for `neovim`!
+> ⚠️ Hey, if you are already here, check out my [custom Neovim theme](https://github.com/tpaau-17DB/habamax.nvim)!
 
 ## Installation
 First, make sure you have both [neovim](https://github.com/neovim/neovim) and [packer.nvim](https://github.com/wbthomason/packer.nvim) installed.
